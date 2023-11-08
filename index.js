@@ -51,11 +51,12 @@ const upload = multer({ storage });
 // connecting database
 const PORT = process.env.PORT || 6001;
 
-const username = encodeURIComponent("user123");
-const password = encodeURIComponent("user@123");
+// const username = encodeURIComponent("user123");
+// const password = encodeURIComponent("user@123");
 
-const MONGO_URL = `mongodb+srv://${username}:${password}@atlascluster.udqc5gm.mongodb.net/?retryWrites=true&w=majority`;
+//const MONGO_URL = `mongodb+srv://${username}:${password}@atlascluster.udqc5gm.mongodb.net/?retryWrites=true&w=majority`;
 
+const MONGO_URL = process.env.MONGO_URL;
 mongoose
   .connect(MONGO_URL, {
     useNewUrlParser: true,
